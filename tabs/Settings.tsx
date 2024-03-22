@@ -1,10 +1,12 @@
-import { Text } from 'native-base'
-import React from 'react'
+import { Text, VStack } from "native-base";
+import React from "react";
 
 const SettingsTab = () => {
   return (
-    <Text>SettingsTab</Text>
-  )
-}
+    <VStack h="full" w="full" bg="#F0F4F7">
+      <Text>SettingsTab</Text>
+    </VStack>
+  );
+};
 
-export default SettingsTab
+export default SettingsTab;

@@ -23,12 +23,14 @@ const BottomTabNavigator = ({
       safeAreaInsets={insets}
       screenOptions={{
         tabBarStyle: {
-          height: Platform.OS === "ios" ? "11%" : 70,
+          height: Platform.OS === "ios" ? "11%" : 60,
+          backgroundColor: '#F8F9FB'
         },
         tabBarIconStyle: { marginTop: 10 },
         tabBarLabelStyle: { marginBottom: 10, fontSize: 12 },
         tabBarLabelPosition: "below-icon",
-        tabBarActiveTintColor: "black",
+        tabBarActiveTintColor: "#40C785",
+      
       }}
     >
       {TABS.map((tab) => (

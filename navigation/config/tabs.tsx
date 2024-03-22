@@ -13,7 +13,7 @@ export const TABS: TabType[] = [
       title: "",
       headerShown: false,
       tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <Icon name="road" size={20} color={focused ? "black" : "grey"} />
+        <Icon name="road" size={20} color={focused ? "#40C785" : "grey"} />
       ),
     }),
   },
@@ -26,7 +26,7 @@ export const TABS: TabType[] = [
       title: "Settings",
       headerShown: false,
       tabBarIcon: ({ focused }: { focused: boolean }) => (
-        <Icon name="user-circle" size={20} color={focused ? "black" : "grey"} />
+        <Icon name="user-circle" size={20} color={focused ? "#40C785" : "grey"} />
       ),
     }),
   },
