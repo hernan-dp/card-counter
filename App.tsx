@@ -4,10 +4,13 @@ import {
   initialWindowMetrics,
 } from "react-native-safe-area-context";
 import Navigation from "./navigation";
+import customTheme from "theme";
+
+require('dayjs/locale/es')
 
 export default function App() {
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider theme={customTheme}>
       <SafeAreaProvider initialMetrics={initialWindowMetrics}>
         <Navigation />
       </SafeAreaProvider>
