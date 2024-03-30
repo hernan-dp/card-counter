@@ -9,7 +9,7 @@ export const TABS: TabType[] = [
     name: "Home",
     component: HomeTab as React.FC,
     options: () => ({
-      tabBarLabel: "Home",
+      tabBarLabel: "Inicio",
       title: "",
       headerShown: false,
       tabBarIcon: ({ focused }: { focused: boolean }) => (
