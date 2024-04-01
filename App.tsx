@@ -5,8 +5,12 @@ import {
 } from "react-native-safe-area-context";
 import Navigation from "./navigation";
 import customTheme from "theme";
+import { LogBox } from "react-native";
 
-require('dayjs/locale/es')
+
+LogBox.ignoreAllLogs();
+
+require("dayjs/locale/es");
 
 export default function App() {
   return (
