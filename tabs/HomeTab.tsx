@@ -1,13 +1,9 @@
-import { ScrollView, VStack } from "native-base";
-import React, { useMemo } from "react";
+import { Box, ScrollView, VStack } from "native-base";
+import React from "react";
 import { Fab } from "native-base";
 import Icon from "react-native-vector-icons/AntDesign";
 import TravelCard from "features/travel/components/TravelCard";
-import {
-  useCollectionData,
-  useCollectionDataOnce,
-  useDocumentData,
-} from "react-firebase-hooks/firestore";
+import { useCollectionDataOnce } from "react-firebase-hooks/firestore";
 import CalendarRow from "@components/CalendarRow";
 import {
   CollectionReference,
@@ -18,6 +14,7 @@ import {
 import { db } from "firebase";
 import Loading from "@components/Loading";
 import dayjs from "dayjs";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
 type Travel = {
   creator: DocumentReference<{
@@ -54,20 +51,22 @@ const transformDate = ({
 
 const query = collection(db, "travels") as CollectionReference<Travel>;
 const HomeTab = () => {
-  const [travels, loading, error] = useCollectionDataOnce(query);
+  const [travels, loading] = useCollectionDataOnce(query);
 
   if (loading || !travels) return <Loading />;
 
   return (
     <ScrollView h="full" w="full" bg="#F0F4F7">
-      <VStack py="5" px="5">
-        <CalendarRow />
-        <VStack space={5} mt="5">
+      <VStack py="5">
+        <Box pl="5">
+          <CalendarRow />
+        </Box>
+        <VStack space={5} mt="5" px="5">
           {travels.map((travel, index) => {
             const departureDate = transformDate(travel.departure);
-            const departureDay = dayjs(travel.departure.start.toDate()).locale('es').format(
-              "DD [de] MMMM"
-            );
+            const departureDay = dayjs(travel.departure.start.toDate())
+              .locale("es")
+              .format("DD [de] MMMM");
 
             return (
               <TravelCard

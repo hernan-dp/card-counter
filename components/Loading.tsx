@@ -5,7 +5,7 @@ import LottieView from "lottie-react-native";
 
 const Loading = ({ testID = "" }) => {
   return (
-    <Center flex={1} bg="transparent" testID={testID}>
+    <Center flex={1} bg="transparent" testID={testID} bgColor="primary.500">
       <LottieView
         source={require("@assets/loading-animation.json")}
         colorFilters={[

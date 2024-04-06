@@ -21,7 +21,7 @@ const CalendarRow = () => {
 
   return (
     <ScrollView horizontal>
-      <HStack space={2}>
+      <HStack space={2} mr="5">
         {week.map((day) => {
           return (
             <DayButton
